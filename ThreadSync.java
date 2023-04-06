@@ -1,7 +1,10 @@
 
 class Display1
 {
-	public  synchronized void hi()
+	public void hi()
+	{
+		
+	synchronized(this)
 	{
 		try 
 		{
@@ -11,15 +14,18 @@ class Display1
 				Thread.sleep(2000);
 				System.out.println(" PARTHA ");
 			}
+			System.out.println("=============================");
 		}
 		catch(InterruptedException e)
 		{
 			System.out.println(" :: There is some Exception in HI ::");
 		}
 	}
+	}
 	
-	public synchronized void hello()
+	public void hello()
 	{
+		 synchronized(this) {
 		try 
 		{
 			for(int i=0;i<5;i++)
@@ -28,11 +34,13 @@ class Display1
 				Thread.sleep(2000);
 				System.out.println(" SHIVA ");
 			}
+			System.out.println("=========================");
 		}
 		catch(InterruptedException e)
 		{
 			System.out.println(" :: There is some Exception in HI ::");
 		}
+		 }
 	}
 	
 	
